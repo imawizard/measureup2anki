@@ -164,7 +164,7 @@ func (qi QuestionImages) HTML() string {
 		images = append(images, fmt.Sprintf(
 			`<img src="%s" alt="%s" class="exhibit">`,
 			image.Name,
-			strings.ReplaceAll(image.Alt, `"`, `\"`),
+			strings.ReplaceAll(image.Alt, `"`, `&quot;`),
 		))
 	}
 	return strings.Join(images, "\n<br>\n")
@@ -389,7 +389,7 @@ func (ls *LiveScreen) ImageHTML() string {
 	return fmt.Sprintf(
 		`<img src="%s" alt="%s" class="image">`,
 		ls.ImageName,
-		strings.ReplaceAll(ls.ImageAlt, `"`, `\"`),
+		strings.ReplaceAll(ls.ImageAlt, `"`, `&quot;`),
 	)
 }
 
@@ -590,7 +590,7 @@ func (sp *SelectPlaceMup) ImageHTML() string {
 	return fmt.Sprintf(
 		`<img src="%s" alt="%s" class="image">`,
 		sp.ImageName,
-		strings.ReplaceAll(sp.ImageAlt, `"`, `\"`),
+		strings.ReplaceAll(sp.ImageAlt, `"`, `&quot;`),
 	)
 }
 
