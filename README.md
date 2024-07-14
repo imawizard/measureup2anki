@@ -65,7 +65,7 @@ var options = [
 ].filter(o => String(o));
 
 options
-	.map((o, i) => ["{{Type}}" !== "liveScreen" ? Math.random() * options : i.length, o])
+	.map((o, i) => ["{{Type}}" !== "liveScreen" ? Math.random() * options.length : i, o])
 	.sort()
 	.map(p => p[1])
 	.forEach((o, i) => {
@@ -80,6 +80,7 @@ options
 ### Back Template
 
 ```html
+<div id="answer"></div>
 {{Image}}
 
 <ul>
@@ -149,7 +150,7 @@ case "selectPlaceMup":
 .card {
   font-family: arial;
   font-size: 18px;
-  //text-align: center;
+  text-align: left;
   color: black;
   background-color: white;
 }
@@ -158,8 +159,19 @@ case "selectPlaceMup":
   list-style-type: circle;
 }
 
+.option.back {
+}
+
 .image {
   border: solid 1px;
+  background: white;
+  border-radius: 4px;
+}
+
+.exhibit {
+  border: solid 1px;
+  background: white;
+  border-radius: 4px;
 }
 
 .hidden {
